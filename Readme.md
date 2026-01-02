@@ -114,6 +114,19 @@ services:
 ```
 docker compose -f docker-compose.yml up -d
 docker compose ps
+docker exec -it kafka1 kafka-topics \
+    --create \
+    --topic test-topic \
+    --bootstrap-server kafka1:9092 \
+    --replication-factor 3 \
+    --partitions 3
+docker exec -it kafka1 kafka-topics \
+    --list \
+    --bootstrap-server kafka1:9092
+docker exec -it kafka1 kafka-topics \
+    --describe \
+    --topic test-topic \
+    --bootstrap-server kafka1:9092
 ```
 
 Once the containers are up , to interact with console
