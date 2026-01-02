@@ -27,6 +27,18 @@ services:
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
       CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+
+
+(Auto ACK:- atleast once)
+/opt/kafka/bin $ ./kafka-topics.sh --create --topic sample-topic --bootstrap-ser
+ver broker:9092
+/opt/kafka/bin $ ./kafka-topics.sh  --bootstrap-server broker:9092 --list
+./kafka-console-consumer.sh --topic sample-topic --from-beginning --bootstrap-server broker:9092
+./kafka-console-producer.sh --topic sample-topic --bootstrap-server broker:9092
+-- To Describe
+./kafka-topics.sh --bootstrap-server broker:9092
+./kafka-topics.sh --bootstrap-server broker:9092 --topic sample-topic
+
 ```
 ```
 mkdir kafka-cluster
