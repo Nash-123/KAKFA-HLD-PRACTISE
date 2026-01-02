@@ -3,7 +3,7 @@
 - Clone the Repo
 - Move inside the cloned Repo and exec the command
 
-...
+```
 mkdir kafka-cluster
 cd kafka-cluster
 mkdir -p kafka1/data kafka2/data kafka3/data
@@ -110,15 +110,14 @@ services:
       - kafka3
     networks:
       - kafka-net
-...
-
-...
+```
+```
 docker compose -f docker-compose.yml up -d
 docker compose ps
-...
+```
 
 Once the containers are up , to interact with console
 
-...
+```
 docker exec -it -w /opt/bin/kafka broker sh
-...
+```
