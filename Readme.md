@@ -168,6 +168,10 @@ docker exec -it kafka1 kafka-topics \
 
 using parse key and key separator
 kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic --property "parse.key=true" --property "key.separator=:" (If not mentioned it goes as round robin)
+
+how separation looks
+{"id":"123"}:{"inboundData": "my-data", "sequenceNumber": 1}
+{"id": "124"}:{"inboundData": "my-name", "sequenceNumber": 2}
 ```
 
 Once the containers are up , to interact with console
