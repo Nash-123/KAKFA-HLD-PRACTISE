@@ -164,6 +164,10 @@ docker exec -it kafka1 kafka-topics \
     --describe \
     --topic test-topic \
     --bootstrap-server kafka1:9092
+
+
+using parse key and key separator
+kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic --property "parse.key=true" --property "key.separator=:" (If not mentioned it goes as round robin)
 ```
 
 Once the containers are up , to interact with console
